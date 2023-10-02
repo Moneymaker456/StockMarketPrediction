@@ -1,2 +1,2 @@
 # StockMarketPrediction
-SIGNLL Project
+The problem is the volatility of stocks in the S&P 500 in response to real-world events reported in the US, and the difficulty in predicting market trends. A solution would be an algorithm that would be able to analyze news articles to predict a negative or positive effect on a stock price. We propose a sentiment analysis algorithm that is able to predict the effects of news stories on stock performance. 
