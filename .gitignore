@@ -58,3 +58,34 @@ docs/_build/
 # PyBuilder
 target/
 maildir
+	const axios = require('axios');
+
+const options = {
+  method: 'POST',
+  url: 'https://data-extractor.p.rapidapi.com/extract/phones',
+  headers: {
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': '18f9b83bc2msh226c8e6903e54cap13fea5jsn04c03bbe5a8a',
+    'X-RapidAPI-Host': 'data-extractor.p.rapidapi.com'
+  },
+  data: {
+    text: 'Hello my name is John Doe, my phone number is 212-456-7890, my email is john+test@doe.com and my website is pretty basic: www.john.doe.com',
+    config: {
+      withPlusPrefix: true,
+      requirePlusPrefix: false,
+      withCountryCode: true,
+      requireCountryCode: false,
+      withZeroPrefix: true,
+      requireZeroPrefix: false,
+      withPartSeparator: true,
+      maxSeparatorLength: 3
+    }
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
